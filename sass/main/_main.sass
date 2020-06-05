@@ -1,0 +1,11 @@
+@import 'navigation-bar'
+@import 'main-feed'
+@import 'right-bar'
+
+.main-content
+   +flex-align(space-between, normal)
+   margin-top: 64px
+
+@media (max-width: 1200px)
+   .main-content
+      justify-content: flex-start

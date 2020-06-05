@@ -1,0 +1,110 @@
+.navigation-bar
+   display: flex
+   flex-direction: column
+   flex-basis: 16%
+   padding: 0 10px
+
+   &__username
+      +flex-align(normal, center)
+      text-decoration: none
+      margin-bottom: 12px
+
+   &__avatar
+      width: 24px
+      height: 24px
+      margin-right: 8px
+
+   &__name
+      color: $text-color
+      line-height: 22px
+
+   &__group
+      margin-bottom: 24px
+
+   &-group
+      display: flex
+      flex-direction: column
+
+      &__title
+         font-size: 12px
+         line-height: 20px
+         font-weight: 700
+         margin-bottom: 4px
+
+      &__item
+         padding: 4px 8px
+         border-radius: 4px
+
+         &.active, &:hover
+            background-color: $white
+
+         &:not(:last-child)
+            margin-bottom: 8px
+
+      &__link
+         +flex-align(normal, center)
+         color: $text-color
+
+      &__icon
+         margin-right: 8px
+
+      &__points
+         margin-left: auto
+
+      &__button
+         margin-top: 12px
+         margin-left: 10px
+         position: relative
+         background-color: transparent
+         color: $active-text-color
+         font-size: 14px
+         line-height: 22px
+         text-align: left
+         padding-left: 28px
+         border: none
+         cursor: pointer
+         transition: 0.3s
+
+         &:before
+            content: ''
+            position: absolute
+            left: 4px
+            width: 0
+            height: 0
+            border-style: solid
+            border-width: 6px 6px 0 6px
+            border-color: #bfbfbf transparent transparent transparent
+            top: 50%
+            transform: translateY(-50%)
+            transition: 0.3s
+
+         &:hover
+            color: $black
+
+            &:before
+               border-color: $black transparent transparent transparent
+
+@media (max-width: 1200px)
+   .navigation-bar
+      flex-basis: 20%
+
+@media (max-width: 992px)
+   .navigation-bar
+      flex-basis: 25%
+
+@media (max-width: 840px)
+   .navigation-bar
+      position: fixed
+      left: 0
+      top: 44px
+      width: 100%
+      max-width: 250px
+      background-color: $bg-body
+      padding-top: 12px
+      height: 100%
+      padding-left: 3%
+      transform: translateX(-100%)
+      transition: transform 0.3s
+
+      &.active
+         transform: translateX(0)

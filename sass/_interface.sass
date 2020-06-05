@@ -1,0 +1,49 @@
+@mixin flex-align($jc: normal, $ai: center)
+   display: flex
+   align-items: $ai
+   justify-content: $jc
+   
+*
+   box-sizing: border-box
+
+   &:focus
+      outline: none
+
+body
+   +reg
+   font-size: 14px
+   background-color: $bg-body
+
+ul, li
+   margin: 0
+   padding: 0
+
+ul
+   list-style: none
+
+h1, h2, h3, h4, h5, h6
+   margin: 0
+   padding: 0
+
+.container
+   max-width: 1200px
+   margin: auto
+
+.input
+   border: 1px solid #d9d9d9
+   border-radius: 4px
+   padding: 5px 30px 5px 12px
+   font-weight: 600
+
+.link
+   display: inline-block
+   text-decoration: none
+   color: $white
+   font-weight: 600
+
+   &:hover
+      text-decoration: underline
+
+@media (max-width: 1240px)
+   .container
+      max-width: 95%
